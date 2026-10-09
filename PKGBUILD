@@ -1,4 +1,4 @@
-# Maintainer: arto
+# Maintainer: arto <alessio@artoni.org>
 pkgname=minilarbs-dwm
 pkgver=6.8
 pkgrel=1
