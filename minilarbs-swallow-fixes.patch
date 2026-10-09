@@ -1,0 +1,57 @@
+From 5ede0c6348ee87eb7a8b611a4856ae8a4c78e49f Mon Sep 17 00:00:00 2001
+From: aartoni <alessio@artoni.org>
+Date: Fri, 9 Oct 2026 13:54:18 +0200
+Subject: [PATCH] minilarbs-swallow-fixes
+
+---
+ dwm.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/dwm.c b/dwm.c
+index f6f3314..df30d65 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -495,7 +495,7 @@ swallow(Client *p, Client *c)
+ 
+ 	if (c->noswallow || c->isterminal)
+ 		return;
+-	if (c->noswallow && !swallowfloating && c->isfloating)
++	if (!swallowfloating && c->isfloating)
+ 		return;
+ 
+ 	detach(c);
+@@ -511,7 +511,11 @@ swallow(Client *p, Client *c)
+ 	p->win = c->win;
+ 	c->win = w;
+ 	updatetitle(p);
++	XWindowChanges wc;
++	wc.border_width = p->bw;
++	XConfigureWindow(dpy, p->win, CWBorderWidth, &wc);
+ 	XMoveResizeWindow(dpy, p->win, p->x, p->y, p->w, p->h);
++	XSetWindowBorder(dpy, p->win, scheme[SchemeNorm][ColBorder].pixel);
+ 	arrange(p->mon);
+ 	configure(p);
+ 	updateclientlist();
+@@ -530,7 +534,11 @@ unswallow(Client *c)
+ 	updatetitle(c);
+ 	arrange(c->mon);
+ 	XMapWindow(dpy, c->win);
++	XWindowChanges wc;
++	wc.border_width = c->bw;
++	XConfigureWindow(dpy, c->win, CWBorderWidth, &wc);
+ 	XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
++	XSetWindowBorder(dpy, c->win, scheme[SchemeNorm][ColBorder].pixel);
+ 	setclientstate(c, NormalState);
+ 	focus(NULL);
+ 	arrange(c->mon);
+@@ -1302,6 +1310,7 @@ manage(Window w, XWindowAttributes *wa)
+ 	XMapWindow(dpy, c->win);
+ 	if (term)
+ 		swallow(term, c);
++	arrange(c->mon);
+ 	focus(NULL);
+ }
+ 
+-- 
+2.56.0
+

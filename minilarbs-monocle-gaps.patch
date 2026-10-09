@@ -1,0 +1,38 @@
+From 7b8baf934e460220156f98551d772686f4bba603 Mon Sep 17 00:00:00 2001
+From: aartoni <alessio@artoni.org>
+Date: Fri, 9 Oct 2026 13:51:19 +0200
+Subject: [PATCH] minilarbs-monocle-gaps
+
+---
+ dwm.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/dwm.c b/dwm.c
+index 4a093d6..f6f3314 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -1330,16 +1330,16 @@ maprequest(XEvent *e)
+ void
+ monocle(Monitor *m)
+ {
+-	unsigned int n = 0;
++	unsigned int n;
++	int oh, ov, ih, iv;
+ 	Client *c;
+ 
+-	for (c = m->clients; c; c = c->next)
+-		if (ISVISIBLE(c))
+-			n++;
++	getgaps(m, &oh, &ov, &ih, &iv, &n);
++
+ 	if (n > 0) /* override layout symbol */
+ 		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
+ 	for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
+-		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
++		resize(c, m->wx + ov, m->wy + oh, m->ww - 2 * c->bw - 2 * ov, m->wh - 2 * c->bw - 2 * oh, 0);
+ }
+ 
+ void
+-- 
+2.56.0
+

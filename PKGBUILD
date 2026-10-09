@@ -54,6 +54,11 @@ _patches=(
   dwm-swallow-6.3.patch
   dwm-sticky-6.5.patch
   dwm-scratchpads-20200414-728d397b.patch
+  dwm-restartsig-20180523-6.2.patch
+  dwm-preserveonrestart-6.3.patch
+  https://dwm.suckless.org/patches/autostart/dwm-autostart-20210120-cb3f58a.diff
+  minilarbs-monocle-gaps.patch
+  minilarbs-swallow-fixes.patch
 )
 source=("https://dl.suckless.org/dwm/dwm-$pkgver.tar.gz"
         config.h
@@ -73,7 +78,12 @@ b2sums=('da5856e037bbb5a1bb5c9ead04765b8fadd1708b0ca207fbebff783232971fd6b1e7d13
         '2a76214671407b455b6fefc96f7de1ec88674dbea0b9fbd72967783e2e4c8913193b2cdd70185a18d61fa959c284f086f9bebfb838ffe37f51a45eae617a1453'
         '46eed983c5e5fc6f7ce7be257d4ad3e3864bfce5f2d14314e6b14ac922b1b0117b5b53c85eb4f6355b5a4ca2b50fffe6cfe7bc775a92d21ddc6acf4520343ece'
         '46e1799747b9966ff48f38ccb7fae5cf00ae34a1afbb068d59d741a49a51c605cd6d21bccec916697569acb974d14ba5f0c0f6b36e3becab2ced31bdc88ca0bc'
-        '5d17a1abae4a47d5b9ebe58823d76124a6f7bc823704a68a23688a795d6ba2a5f5fcd0d2a1fa37f8da0dbeae19e8133287441b700c7fdecbeebe2c2cc00a0c7f')
+        '5d17a1abae4a47d5b9ebe58823d76124a6f7bc823704a68a23688a795d6ba2a5f5fcd0d2a1fa37f8da0dbeae19e8133287441b700c7fdecbeebe2c2cc00a0c7f'
+        '1451d4472c64a8b924989a5f36013f2ca0e04473769024b174694ee34505bb96b118c7818f7c182316b42f91a73238b14d3c32b6491bdd35cd60d89e07160a6c'
+        'e01db98d77e8d9ae74ab9a69765ca8dbaef1bcf8756217f0c4d26953b8b93bf6183f513ca9d370870151a196e54ede689ae3dbc774d3dd1fd1078f0bba005b49'
+        'fa261dd11bf88fc7712c84490f68c66decb389ef23bb96d9fd8290b008eaac13eba7f2dccc663f2aa925b9100379843e054b87b58bc29423bc9db6bc47541c96'
+        'def9a510756a313ea62985b208708fdd4430cba4ce0d064fef0d021b3955834397ff947ec05b6cd546df25fc568631fb106d50f788f2744c88614f57c95e3037'
+        '7d3213a48e6538dd9df2aecbb4af80b386f87250ab1b4b0decb7366fa5998bd01c74ff8fcb14197c6e0fc2b8e9564bf69351053dd54d1e5ee65b05c2ed3d346b')
 
 prepare() {
   cd "dwm-$pkgver"
