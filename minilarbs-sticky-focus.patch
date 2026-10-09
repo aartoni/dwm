@@ -1,0 +1,32 @@
+From f16f255376371aca7a67fbd9d6a9cfa9529a1bae Mon Sep 17 00:00:00 2001
+From: aartoni <alessio@artoni.org>
+Date: Fri, 9 Oct 2026 14:28:35 +0200
+Subject: [PATCH] minilarbs-sticky-focus
+
+---
+ dwm.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/dwm.c b/dwm.c
+index df30d65..cdd472a 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -976,8 +976,13 @@ expose(XEvent *e)
+ void
+ focus(Client *c)
+ {
+-	if (!c || !ISVISIBLE(c))
+-		for (c = selmon->stack; c && !ISVISIBLE(c); c = c->snext);
++	if (!c || !ISVISIBLE(c)) {
++		/* prefer non-sticky windows unless the focused one is sticky */
++		for (c = selmon->stack; c && (!ISVISIBLE(c)
++		     || (c->issticky && (!selmon->sel || !selmon->sel->issticky))); c = c->snext);
++		if (!c) /* only stickies visible, take one of those */
++			for (c = selmon->stack; c && !ISVISIBLE(c); c = c->snext);
++	}
+ 	if (selmon->sel && selmon->sel != c)
+ 		unfocus(selmon->sel, 0);
+ 	if (c) {
+-- 
+2.56.0
+
