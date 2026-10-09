@@ -59,6 +59,7 @@ _patches=(
   https://dwm.suckless.org/patches/autostart/dwm-autostart-20210120-cb3f58a.diff
   minilarbs-monocle-gaps.patch
   minilarbs-swallow-fixes.patch
+  dwm-alwayscenter-20200625-f04cac6.patch
 )
 source=("https://dl.suckless.org/dwm/dwm-$pkgver.tar.gz"
         config.h
@@ -83,7 +84,8 @@ b2sums=('da5856e037bbb5a1bb5c9ead04765b8fadd1708b0ca207fbebff783232971fd6b1e7d13
         'e01db98d77e8d9ae74ab9a69765ca8dbaef1bcf8756217f0c4d26953b8b93bf6183f513ca9d370870151a196e54ede689ae3dbc774d3dd1fd1078f0bba005b49'
         'fa261dd11bf88fc7712c84490f68c66decb389ef23bb96d9fd8290b008eaac13eba7f2dccc663f2aa925b9100379843e054b87b58bc29423bc9db6bc47541c96'
         'def9a510756a313ea62985b208708fdd4430cba4ce0d064fef0d021b3955834397ff947ec05b6cd546df25fc568631fb106d50f788f2744c88614f57c95e3037'
-        '7d3213a48e6538dd9df2aecbb4af80b386f87250ab1b4b0decb7366fa5998bd01c74ff8fcb14197c6e0fc2b8e9564bf69351053dd54d1e5ee65b05c2ed3d346b')
+        '7d3213a48e6538dd9df2aecbb4af80b386f87250ab1b4b0decb7366fa5998bd01c74ff8fcb14197c6e0fc2b8e9564bf69351053dd54d1e5ee65b05c2ed3d346b'
+        '7515f42b1ff49b464d72fe720d8632d6a545314c3adb8a0bd1071fd45c2a25a559bfb51ad19381f192da95aa65846cb801d6c276d47fee37d7e15d515d067847')
 
 prepare() {
   cd "dwm-$pkgver"
