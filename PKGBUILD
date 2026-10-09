@@ -7,6 +7,39 @@ arch=(x86_64)
 url=https://github.com/aartoni/dwm
 license=(MIT)
 depends=(libx11 libxinerama libxft freetype2 libxcb)
+optdepends=(
+  'st: terminal, scratchpads'
+  'dmenu: launcher (Mod+d), snippets (Mod+Insert)'
+  'dwmblocks: clickable status bar'
+  'librewolf: browser (Mod+w)'
+  'wireplumber: volume keys (wpctl)'
+  'libpulse: mic mute key (pactl)'
+  'pulsemixer: mixer (Mod+F4)'
+  'mpc: music controls'
+  'ncmpcpp: music player (Mod+m)'
+  'mpv: webcam view (Mod+F11)'
+  'neomutt: mail (Mod+e)'
+  'mutt-wizard: mail sync (Mod+F8)'
+  'abook: address book (Mod+Shift+e)'
+  'lf: file manager (Mod+r)'
+  'htop: process viewer (Mod+Shift+r)'
+  'networkmanager: network setup (Mod+Shift+w)'
+  'profanity: XMPP client (Mod+c)'
+  'neovim: wiki (Mod+n)'
+  'newsboat: RSS reader (Mod+Shift+n)'
+  'pass: password menu (Mod+Shift+d)'
+  'xdotool: snippets (Mod+Insert)'
+  'groff: minilarbs guide (Mod+F1)'
+  'zathura-pdf-mupdf: minilarbs guide viewer (Mod+F1)'
+  'maim: screenshots (Print)'
+  'screenkey: key overlay (Mod+Scroll_Lock)'
+  'psmisc: screenkey toggle (killall)'
+  'slock: screen lock'
+  'xorg-xset: display off'
+  'brightnessctl: brightness keys'
+  'bc: calculator scratchpad and key'
+  'runit: suspend key (zzz)'
+)
 provides=(dwm)
 conflicts=(dwm)
 _patches=(
