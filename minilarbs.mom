@@ -3,7 +3,7 @@
 .SHIFT_LIST 10p
 ..
 .PARA_SPACE 1m
-.TITLE "\s+(10A Friendly Guide to LARBS!\s0"
+.TITLE "\s+(10A Friendly Guide to minilarbs!\s0"
 .AUTHOR "\s+5Luke Smith\s0"
 .DOCTYPE    DEFAULT
 .COPYSTYLE  FINAL
@@ -60,7 +60,7 @@ This is to make one-handing on laptops easier.
 .LIST OFF
 .PP
 If you'd like to change any of these keyboard changes, you need only open and change the \f(CWremaps\fP script.
-All custom scripts in LARBS are located in \f(CW~/.local/bin/\fP.
+All custom scripts in minilarbs are located in \f(CW~/.local/bin/\fP.
 Actually, this should go without saying, but \fIeverything\fP here can easily be changed.
 Below in this document, there is information about where to change programs/components.
 .PP
@@ -296,7 +296,7 @@ You'll have to restart the program to see its effects obviously.
 .HEADING 1 "Frequently Asked Questions (FAQs)"
 .HEADING 2 "My keyboard isn't working as expected!"
 .PP
-As mentioned above, LARBS makes some keyboard changes with the \f(CWremaps\fP script.
+As mentioned above, minilarbs makes some keyboard changes with the \f(CWremaps\fP script.
 These settings may override your preferred settings, so you should open this file and comment out troublesome lines if you have issues.
 .HEADING 2 "My audio isn't working!"
 .PP
@@ -316,12 +316,12 @@ The script \f(CWsetbg\fP, if run on an image will set it as the persistent backg
 When using the file manager, you can simply hover over an image name and type \f(CWb\fP and this will run \f(CWsetbg\fP.
 .HEADING 2 "How I change the colorscheme?"
 .PP
-LARBS no longer deploys Xresources by default, but check \f(CW~/.config/x11/xresources\fP for a list of color schemes you can activate or add your own. When you save the file, vim will automatically update the colorscheme. If you'd like these colors activated by default on login, there is a line in \f(CW~/.config/x11/xprofile\fP you can uncomment to allow that.
+minilarbs no longer deploys Xresources by default, but check \f(CW~/.config/x11/xresources\fP for a list of color schemes you can activate or add your own. When you save the file, vim will automatically update the colorscheme. If you'd like these colors activated by default on login, there is a line in \f(CW~/.config/x11/xprofile\fP you can uncomment to allow that.
 .PP
 Or, if you want to use \f(CWwal\fP to automatically generate colorschemes from your wallpapers, just install it and \f(CWsetbg\fP will automatically detect and run it on startup and wallpaper change.
 .HEADING 2 "How do I set up my email?"
 .PP
-LARBS comes with mutt-wizard, which gives the ability to receive and send all your email and keep an offline store of it all in your terminal, without the need for browser.
+minilarbs comes with mutt-wizard, which gives the ability to receive and send all your email and keep an offline store of it all in your terminal, without the need for browser.
 You can add email accounts by running \f(CWmw -a your@email.com\fP.
 See \f(CWman mw\fP for all the information you need about mutt-wizard.
 .PP
@@ -335,11 +335,11 @@ By default, mpd, the music daemon assumes that \f(CW~/Music\fP is your music dir
 This can be changed in \f(CW~/.config/mpd/mpd.conf\fP.
 When you add music to your music folder, you may have to run \f(CWmpc up\fP in the terminal to update the database.
 mpd is controlled by ncmpcpp, which is accessible by \f(CWMod+m\fP.
-.HEADING 2 "How do I update LARBS?"
+.HEADING 2 "How do I update minilarbs?"
 .PP
-LARBS is deployed as a git repository in your home directory.
+minilarbs is deployed as a git repository in your home directory.
 You can use it as such to fetch, diff and merge changes from the remote repository.
-If you don't want to do that or don't know how to use git, you can actually just rerun the script (as root) and reinstall LARBS and it will automatically update an existing install if you select the same username.
+If you don't want to do that or don't know how to use git, you can actually just rerun the script (as root) and reinstall minilarbs and it will automatically update an existing install if you select the same username.
 This will overwrite the original config files though, including changes you made for them, but this is an easier brute force approach that will also install any new dependencies.
 .HEADING 1 "Important Links"
 .PP
