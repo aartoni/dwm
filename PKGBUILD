@@ -23,10 +23,12 @@ _patches=(
 )
 source=("https://dl.suckless.org/dwm/dwm-$pkgver.tar.gz"
         config.h
+        minilarbs.mom
         https://dwm.suckless.org/patches/shift-tools/shift-tools-scratchpads.c
         "${_patches[@]}")
 b2sums=('da5856e037bbb5a1bb5c9ead04765b8fadd1708b0ca207fbebff783232971fd6b1e7d13b56b9160e1b25afa0e23fb1f1c73be9c16aaa56acceb2517643d7bc56'
-        '8d98b1e07fe98cdf2be8b0cfde710e2d83df08304dcfef9175028a845714e4cd5969dae90f024cc03598dbcf66bf339595250d5cc643f1a85dd58b66c5aaec94'
+        '95971fa84ed2a40aca450a6fd18049825dc3029163391c0ec54e57f464c36b5d665e962f90e2b20c445baf26fa192c56b5705686ae8bec9f97f544c56f5446aa'
+        '0795a3e2f33a74c82b147bfdd1c499a0f9dcbbdceb29800367ac88907b226ea283fe5027e66031ae568c96a38a7b788d53e20f0105685dfd367e43fcb2ef2c97'
         'eb5c8f54f2215bb13cc5b138c0359ea0c3f28173c5e6b6787eba99132982e01e96679d9e935baa3ec59ac6e76ee904b103b98afa4846024427e29154a1d2ced6'
         'cbdd4ef3c0e0af79e67f7f17d8c86c2cbb0222d88b77057c5099704ee76c2de1f8d47b573ea49cd9fa4ffc793aaab032bce78bbd2639db8ccbac139f2b3fd73f'
         'd79e9da4ec17600de7b986f50a1ab6eb89d0815cf4325bd6a94923e012533834a22a31dbd3329d130cdf867179496e2d730a1319f12e16c68eae875eae3c6707'
@@ -54,5 +56,6 @@ build() {
 
 package() {
   make -C "dwm-$pkgver" PREFIX=/usr DESTDIR="$pkgdir" install
+  install -Dm644 "$srcdir/minilarbs.mom" "$pkgdir/usr/share/doc/$pkgname/minilarbs.mom"
   install -Dm644 "dwm-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
