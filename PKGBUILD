@@ -6,7 +6,8 @@ pkgdesc="minilarbs build of dwm"
 arch=(x86_64)
 url=https://github.com/aartoni/dwm
 license=(MIT)
-depends=(libx11 libxinerama libxft freetype2 libxcb)
+depends=(glibc fontconfig libx11 libxinerama libxft libxcb)
+makedepends=(freetype2)
 optdepends=(
   'st: terminal, scratchpads'
   'dmenu: launcher (Mod+d), snippets (Mod+Insert)'
