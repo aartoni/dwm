@@ -59,8 +59,10 @@ _patches=(
   https://dwm.suckless.org/patches/autostart/dwm-autostart-20210120-cb3f58a.diff
   minilarbs-monocle-gaps.patch
   minilarbs-swallow-fixes.patch
-  dwm-alwayscenter-20200625-f04cac6.patch
   minilarbs-sticky-focus.patch
+  minilarbs-unfullscreen-on-new.patch
+  dwm-alwayscenter-20200625-f04cac6.patch
+  minilarbs-stacker-fixes.patch
 )
 source=("https://dl.suckless.org/dwm/dwm-$pkgver.tar.gz"
         config.h
@@ -86,8 +88,10 @@ b2sums=('da5856e037bbb5a1bb5c9ead04765b8fadd1708b0ca207fbebff783232971fd6b1e7d13
         'fa261dd11bf88fc7712c84490f68c66decb389ef23bb96d9fd8290b008eaac13eba7f2dccc663f2aa925b9100379843e054b87b58bc29423bc9db6bc47541c96'
         '2da73e90f8401131125d8508272ff6a5e911b3ba1a055461967d74f153533792940931dedfb5485fa5821ad2beea019fdfd3728362bdafbd3678672f43fe3286'
         '80a9a232a309ac39ceb5dd080af69759f81f394e4fe785d1cc2586e1c7a30ac2ca9af400e744cba4e5d23d8db9d20f109c0f0e9fe6732f352baf2f99f6dc5284'
+        '67a04475867ea2707efff0d76d4fffe03a61d8cddbba5511eb107dc141459fd70d6050dab6878db5e864b9670e75a9492f49647cd0a13d89bfd49b2dbfaccc5d'
+        'a07fb7520835ef5817f3eee9720902ef7a87bff9205db1de6ecfab223b74f3f0cd14a9ca149a99e507830bffd06d38f76590d2040bb2453e8343cf89235b1501'
         '63303bee8b0588feeba3e5316cc5276f42535e432ce076c0edf123b551e24c2c21b943507f7175d93625863312e846baf63bb58966e3e7dd633625eba7c0e5c2'
-        '67a04475867ea2707efff0d76d4fffe03a61d8cddbba5511eb107dc141459fd70d6050dab6878db5e864b9670e75a9492f49647cd0a13d89bfd49b2dbfaccc5d')
+        '40fe42048698b21007b12a244fd42f075ab7afbdac207cdc80977c0a211c26f2c2fe42dd3289d4392688c4607cfafc02370c1d0753bb9fd11f8c425f1d914f9b')
 
 prepare() {
   cd "dwm-$pkgver"
