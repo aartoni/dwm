@@ -1,4 +1,4 @@
-From 12f1b9e688d79acd9cdaaf5d3ca7f1045479fd66 Mon Sep 17 00:00:00 2001
+From aae84d193dccba70e4f9ba94614f067e59d77c6b Mon Sep 17 00:00:00 2001
 From: aartoni <alessio@artoni.org>
 Date: Fri, 9 Oct 2026 13:41:12 +0200
 Subject: [PATCH] dwm-restartsig-20180523-6.2
@@ -50,7 +50,7 @@ index 3d310ac..837d02a 100644
  .BR dmenu (1),
  .BR st (1)
 diff --git a/dwm.c b/dwm.c
-index 05c0fe2..5af6a1e 100644
+index 8617391..169274f 100644
 --- a/dwm.c
 +++ b/dwm.c
 @@ -239,7 +239,9 @@ static void setmfact(const Arg *arg);

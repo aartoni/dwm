@@ -1,6 +1,6 @@
-From 6eb11fd14093f6d62e4f9d7c414c300e63517f3c Mon Sep 17 00:00:00 2001
+From f996802df3856650d762bfa86c72c55439407d14 Mon Sep 17 00:00:00 2001
 From: aartoni <alessio@artoni.org>
-Date: Fri, 9 Oct 2026 14:13:16 +0200
+Date: Fri, 9 Oct 2026 15:55:53 +0200
 Subject: [PATCH] dwm-alwayscenter-20200625-f04cac6
 
 ---
@@ -8,10 +8,10 @@ Subject: [PATCH] dwm-alwayscenter-20200625-f04cac6
  1 file changed, 2 insertions(+)
 
 diff --git a/dwm.c b/dwm.c
-index df30d65..6b23298 100644
+index 05c5065..20a316f 100644
 --- a/dwm.c
 +++ b/dwm.c
-@@ -1291,6 +1291,8 @@ manage(Window w, XWindowAttributes *wa)
+@@ -1296,6 +1296,8 @@ manage(Window w, XWindowAttributes *wa)
  	}
  	setclienttagprop(c);
  

@@ -1,12 +1,12 @@
-From a1abdd7fafde8b3b6dbebb10c166a73fac3b4dfe Mon Sep 17 00:00:00 2001
+From 3b379d3be56354eac6bb3649de948872e9b970a4 Mon Sep 17 00:00:00 2001
 From: aartoni <alessio@artoni.org>
 Date: Fri, 9 Oct 2026 11:49:41 +0200
 Subject: [PATCH] dwm-scratchpads-20200414-728d397b
 
 ---
  config.def.h | 22 ++++++++++++++++++++--
- dwm.c        | 41 ++++++++++++++++++++++++++++++++++++++++-
- 2 files changed, 60 insertions(+), 3 deletions(-)
+ dwm.c        | 43 +++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 61 insertions(+), 4 deletions(-)
 
 diff --git a/config.def.h b/config.def.h
 index 2a29524..fef4639 100644
@@ -58,15 +58,16 @@ index 2a29524..fef4639 100644
  	TAGKEYS(                        XK_2,                      1)
  	TAGKEYS(                        XK_3,                      2)
 diff --git a/dwm.c b/dwm.c
-index e19faae..05c0fe2 100644
+index e19faae..8617391 100644
 --- a/dwm.c
 +++ b/dwm.c
 @@ -65,7 +65,10 @@
  #define WIDTH(X)                ((X)->w + 2 * (X)->bw)
  #define HEIGHT(X)               ((X)->h + 2 * (X)->bw)
  #define PREVSEL                 3000
+-#define TAGMASK                 ((1 << LENGTH(tags)) - 1)
 +#define NUMTAGS					(LENGTH(tags) + LENGTH(scratchpads))
- #define TAGMASK                 ((1 << LENGTH(tags)) - 1)
++#define TAGMASK                 ((1 << NUMTAGS) - 1)
 +#define SPTAG(i) 				((1 << LENGTH(tags)) << (i))
 +#define SPTAGMASK   			(((1 << LENGTH(scratchpads))-1) << LENGTH(tags))
  #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)

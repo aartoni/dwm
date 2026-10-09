@@ -1,6 +1,6 @@
-From ff84c021c6ffd426d467092e005bffea0b752507 Mon Sep 17 00:00:00 2001
+From 251e52db2c46a9555032beedac87c618f53af25e Mon Sep 17 00:00:00 2001
 From: aartoni <alessio@artoni.org>
-Date: Fri, 9 Oct 2026 09:17:32 +0200
+Date: Fri, 9 Oct 2026 11:38:49 +0200
 Subject: [PATCH] dwm-sticky-6.5
 
 ---

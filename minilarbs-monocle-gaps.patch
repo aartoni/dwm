@@ -1,4 +1,4 @@
-From 7b8baf934e460220156f98551d772686f4bba603 Mon Sep 17 00:00:00 2001
+From 50075973ef6f55d0d578b525c8a260bbca0b5314 Mon Sep 17 00:00:00 2001
 From: aartoni <alessio@artoni.org>
 Date: Fri, 9 Oct 2026 13:51:19 +0200
 Subject: [PATCH] minilarbs-monocle-gaps
@@ -8,7 +8,7 @@ Subject: [PATCH] minilarbs-monocle-gaps
  1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/dwm.c b/dwm.c
-index 4a093d6..f6f3314 100644
+index f02056e..c63eb76 100644
 --- a/dwm.c
 +++ b/dwm.c
 @@ -1330,16 +1330,16 @@ maprequest(XEvent *e)

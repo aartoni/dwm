@@ -1,4 +1,4 @@
-From ee1fa75847a2787ee5f9f2430b12c04d07991cb5 Mon Sep 17 00:00:00 2001
+From f9339e6eb023549150b8de77939095c6931af5a3 Mon Sep 17 00:00:00 2001
 From: aartoni <alessio@artoni.org>
 Date: Fri, 9 Oct 2026 13:47:39 +0200
 Subject: [PATCH] dwm-preserveonrestart-6.3
@@ -8,7 +8,7 @@ Subject: [PATCH] dwm-preserveonrestart-6.3
  1 file changed, 37 insertions(+), 1 deletion(-)
 
 diff --git a/dwm.c b/dwm.c
-index 5af6a1e..71f4dae 100644
+index 169274f..1dbf334 100644
 --- a/dwm.c
 +++ b/dwm.c
 @@ -77,7 +77,7 @@ enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
