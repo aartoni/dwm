@@ -82,10 +82,16 @@ prepare() {
     patch -Np1 -i "$srcdir/${p##*/}"
   done
   cp "$srcdir/config.h" "$srcdir/shift-tools-scratchpads.c" .
+  echo "CPPFLAGS+=${CPPFLAGS}" >> config.mk
+  echo "CFLAGS+=${CFLAGS}" >> config.mk
+  echo "LDFLAGS+=${LDFLAGS}" >> config.mk
 }
 
 build() {
-  make -C "dwm-$pkgver"
+  make -C "dwm-$pkgver" \
+    X11INC=/usr/include/X11 \
+    X11LIB=/usr/lib/X11 \
+    FREETYPEINC=/usr/include/freetype2
 }
 
 package() {
