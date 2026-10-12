@@ -100,16 +100,20 @@ prepare() {
     patch -Np1 -i "$srcdir/${p##*/}"
   done
   cp "$srcdir/config.h" "$srcdir/shift-tools-scratchpads.c" .
-  echo "CPPFLAGS+=${CPPFLAGS}" >> config.mk
-  echo "CFLAGS+=${CFLAGS}" >> config.mk
-  echo "LDFLAGS+=${LDFLAGS}" >> config.mk
+  printf '%s\n' \
+    'CPPFLAGS += $(PKG_CPPFLAGS)' \
+    'CFLAGS += $(PKG_CFLAGS)' \
+    'LDFLAGS := $(PKG_LDFLAGS) $(LDFLAGS)' >> config.mk
 }
 
 build() {
   make -C "dwm-$pkgver" \
     X11INC=/usr/include/X11 \
     X11LIB=/usr/lib/X11 \
-    FREETYPEINC=/usr/include/freetype2
+    FREETYPEINC=/usr/include/freetype2 \
+    PKG_CPPFLAGS="$CPPFLAGS" \
+    PKG_CFLAGS="$CFLAGS" \
+    PKG_LDFLAGS="$LDFLAGS"
 }
 
 package() {
